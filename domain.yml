@@ -1,0 +1,143 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
+intents:
+- delivery_issue
+- order_issue
+- payment_issue
+- product_issue
+- login_issue
+- check_human
+- refund
+- thankyou
+- suggest
+- help
+- greet
+- goodbye
+- deny
+- affirm
+- human_handoff
+- credit_issue
+- refund_money
+- out_of_scope
+- bot_challenge
+- driver_issue
+- product_replacement
+- handoff
+
+entities:
+ - time
+ - PERSON
+ - number
+ - handoff_to
+# slots:
+responses:
+  utter_out_of_scope:
+  - text: Sorry, I'm not sure how to respond to that. Type "help" for assistance.
+  utter_goodbye:
+  - text: Bye
+  utter_noworries:
+  - text: You're welcome :)
+  utter_ask_rephrase:
+  - text: I didn't quite understand that. Can you rephrase?
+  utter_ok:
+  - text: 👍
+  utter_ask_continue:
+  - text: Would you like to continue?
+  # utter_default:
+  # - text: I didn't quite understand that. Could you rephrase?
+  utter_greet:
+  - text: Hi! I'm your Virtual Assistant!
+  utter_ask_handoff:
+  - text: It looks like you want to be transferred to a human agent.
+  utter_handoff:
+  - text: Alright, I'll try to transfer you.
+  utter_wouldve_handed_off:
+  - text: If you were talking to me via chatroom, I would have handed you off to {handoffhost}.
+  utter_no_handoff:
+  - text: Since you haven't configured a host to hand off to, I can't send you anywhere!
+
+  utter_delivery_issue:
+  - text: How can I help with your delivery?
+  utter_delivery_issue2:
+  - text: When did you place your order?
+  utter_delivery_issue3:
+  - text: When did your order arrive?
+  utter_delivery_issue4:
+  - text: We usually allow for 10 mins due to traffic, our apologies for the delay
+
+  utter_ask_whatelse:
+  - text: What else can I help you with?
+  utter_bot:
+  - text: I'm a virtual assistant
+
+  utter_product_issue:
+  - text: I hope you received your products
+  utter_product_issue1:
+  - text: Was the bag ripped?
+  utter_product_issue2:
+  - text: How many products were not delivered?
+  utter_product_issue3:
+  - text: How many products were expired?
+  utter_product_issue4:
+  - text: Please can enter the barcodes here?
+
+  utter_order_issue:
+  - text: Tell me what went wrong?
+  utter_order_issue2:
+  - text: Please check that your payment was completed
+  utter_order_issue3:
+  - text: We sorry that your order was mixed up
+  utter_order_issue4:
+  - text: Tell me, do you have the wrong order delivered to you? Please do return it to your nearest store
+
+  utter_credit_issue:
+  - text: credit related problems
+  utter_payment_response:
+  - text: payment for your purchase has gone through
+
+  utter_refund_policy:
+  - text: I hope you received your refund
+  utter_refund2:
+  - text: It usually takes 24 hrs for you to received your refund due bank differences
+  utter_check_wallet:
+  - text: Please be aware that your refuns are in your wallet on the App and not returned to your bank account
+
+  utter_product_replacement_response:
+  - text: Do you select your replacement product?
+  utter_product_replacement2:
+  - text: Did you mot like alternative given?
+  utter_product_replacement3:
+  - text: What is wrong with the alternative given?
+
+  utter_driver_issue:
+  - text: It seems you did not like the way the driver behaved 
+  utter_technical_issue:
+  - text: what message related to imternet connection?
+  utter_technical_response:
+  - text: Did you find easy to sign up?
+  utter_technical_issue2:
+  - text: Please check your internet connection
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_info:
+  - text: Here is a link to our website [ ]{link}
+  utter_suggestion:
+  - text: Thanks for bringing this to our notice
+  utter_apology:
+  - text: We apologise, I will inform the team
+  utter_help:
+  - text: |
+      I can help you with your queries. 
+      You can ask me things about: 
+      - Drivers
+      - Wrong delivery 
+      - refund 
+      - alternative products
+actions:
+  - action_hello_world
+# - action_session_start
+# - action_restart
+# - action_handoff
+# - action_handoff_options

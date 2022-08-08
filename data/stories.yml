@@ -1,0 +1,113 @@
+version: "3.0"
+
+stories:
+
+- story: say ok when user affirms after utter_help
+  steps:
+  - action: utter_help
+  - intent: affirm
+  - action: utter_ok
+
+# - story: say ok when user affirms after action_show_balance
+#   steps:
+#   - action: action_show_balance
+#   - intent: affirm
+#   - action: utter_ok
+
+# - story: say ok when user affirms after action_show_recipients
+#   steps:
+#   - action: action_show_recipients
+#   - intent: affirm
+#   - action: utter_ok
+  
+# - story: say ok when user affirms after action_show_transfer_charge
+#   steps:
+#   - action: action_show_transfer_charge
+#   - intent: affirm
+#   - action: utter_ok
+
+- story: check delivery
+  steps:
+  - intent: delivery_issue
+  - action: utter_delivery_issue
+  - intent: delivery_issue
+  - action: utter_delivery_issue2
+  - intent: delivery_issue
+  - action: utter_delivery_issue3
+  - action: utter_delivery_issue4
+  - action: utter_ask_whatelse
+
+- story: driver behavior
+  steps:
+  - intent: driver_issue
+  - action: utter_driver_issue
+  - action: utter_suggestion
+  - action: utter_ask_whatelse
+ 
+
+- story: replacement with alternative products+ deny
+  steps:
+  - intent: product_replacement
+  - action: utter_product_replacement_response
+  - intent: deny
+  - action: utter_product_replacement2
+  - action: utter_apology
+- story: replacement with alternative products+affirm
+  steps:
+  - intent: product_replacement
+  - action: utter_product_replacement_response
+  - intent: affirm
+  - action: utter_apology
+
+- story: order
+  steps:
+  - action: utter_how_can_we_help
+  - intent: order_issue
+  - action: utter_order_issue
+
+- story: delivered product issues
+  steps:
+  - action: utter_how_can_we_help
+  - intent: product_issue
+  - action: utter_product_issue
+
+- story: credit  
+  steps:
+  - action: utter_how_can_we_help
+  - intent: credit_issue
+  - action: utter_credit_issue
+  - action: utter_info
+
+- story: payment problems
+  steps:
+  - action: utter_how_can_we_help
+  - intent: payment_issue
+  - action: utter_payment_response
+
+- story: refund due to cancellation or other reasons
+  steps:
+  - action: utter_how_can_we_help
+  - intent: refund
+  - action: utter_refund_policy
+  - action: utter_refund2
+  - intent: refund
+  - action: utter_suggestion
+- story: refund money + check wallet,complete refund form, deny
+  steps:
+  - intent: refund_money
+  - action: utter_check_wallet 
+  - intent: refund_money
+  - action: utter_ask_whatelse
+- story: technical problems with login to App
+  steps:
+  - intent: login_issue
+  - action: utter_technical_issue
+  - intent: affirm
+  - action: utter_technical_issue2
+  - intent: login_issue
+  - action: utter_suggestion
+
+- story: suggest
+  steps:
+  - intent: suggest
+  - action: utter_suggestion
