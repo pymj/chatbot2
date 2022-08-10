@@ -63,10 +63,14 @@ responses:
   utter_delivery_issue2:
   - text: When did you place your order?
   utter_delivery_issue3:
-  - text: When did your order arrive?
-  utter_delivery_issue4:
   - text: We usually allow for 10 mins due to traffic, our apologies for the delay
-
+  utter_delivery_issue4:
+  - text: Has it been more than an hour since you place your order?
+  utter_delivery_issue5:
+  - text: Have you tracked your order?
+  utter_delivery_issue6:
+  - text: Oh shame! Please give me the order number and I will forward it to the team. Someone will get in touch with you shortly
+  
   utter_ask_whatelse:
   - text: What else can I help you with?
   utter_bot:
@@ -129,7 +133,9 @@ responses:
   - text: We apologise, I will inform the team
   utter_help:
   - text: |
-      I can help you with your queries. 
+      I can help you with your queries.
+  utter_help1:
+  - text: |
       You can ask me things about: 
       - Drivers
       - Wrong delivery 

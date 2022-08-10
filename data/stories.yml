@@ -8,11 +8,11 @@ stories:
   - intent: affirm
   - action: utter_ok
 
-# - story: say ok when user affirms after action_show_balance
-#   steps:
-#   - action: action_show_balance
-#   - intent: affirm
-#   - action: utter_ok
+- story: beginning
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
 
 # - story: say ok when user affirms after action_show_recipients
 #   steps:
@@ -35,12 +35,17 @@ stories:
   - intent: delivery_issue
   - action: utter_delivery_issue3
   - action: utter_delivery_issue4
+  - intent: affirm
+  - action: utter_delivery_issue5
+  - intent: affirm
+  - action: utter_delivery_issue6
   - action: utter_ask_whatelse
 
 - story: driver behavior
   steps:
   - intent: driver_issue
   - action: utter_driver_issue
+  - intent: deny
   - action: utter_suggestion
   - action: utter_ask_whatelse
  
